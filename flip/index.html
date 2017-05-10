@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3d卡片翻转效果</title>
+	<style>
+		body{
+			perspective: 1000px;
+		}
+		.box{
+			margin: 50px auto;
+		    width: 239px;
+		    height: 334px;
+		    position: relative;
+		    transform-style: preserve-3d;
+		    transition: transform 1s;
+		}
+		.card{
+			display: block;
+			  position: absolute;
+			  width: 100%;
+			  height: 100%;
+			  backface-visibility: hidden;
+			  border-radius: 20px;
+		}
+		.front{
+			background-image: url(1.jpg);
+    		background-position: -24px -23px;
+		}
+		.back{
+			transform: rotateY(180deg);
+			background-image: url(1.jpg);
+    		background-position: -287px -23px;
+		}
+		.flipped{
+			transform: rotateY(180deg);
+		}
+
+		
+	</style>
+</head>
+<body>
+		<div class="box">
+			<div class="card front">
+			</div>
+			<div class="card back"></div>
+		</div>
+
+	
+	         
+	<script src="./../js/jquery.min.js"></script>
+	<script>
+		 $(".box").hover(function(event){
+		    $(this).toggleClass("flipped");
+		  })
+	</script>
+</body>
+</html>
